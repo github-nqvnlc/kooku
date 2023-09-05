@@ -36,7 +36,7 @@ const NavigationSidebar = async () => {
           return (
             <div
               key={server.id}
-              className="flex items-center justify-between w-full cursor-pointer "
+              className="mb-4 items-center w-full cursor-pointer "
             >
               <NavigationItem
                 id={server.id}
