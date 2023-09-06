@@ -29,6 +29,7 @@ import { Button } from "@/components/ui/button";
 import FileUpload from "../file-upload";
 import { useRouter } from "next/navigation";
 import { useModal } from "@/hooks/use-modal-store";
+import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
   name: z.string().min(1, {
@@ -74,12 +75,12 @@ const CreateServerModal = () => {
 
   return (
     <Dialog open={isModalOpen} onOpenChange={handleClose}>
-      <DialogContent className="bg-white text-black p-0 overflow-hidden">
+      <DialogContent className="bg-white text-black dark:bg-[#55636c] dark:text-[#fbfbfb] p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl font-bold text-center">
             Customize your server
           </DialogTitle>
-          <DialogDescription className="text-xs text-center text-zinc-500">
+          <DialogDescription className="text-xs text-center text-zinc-500 dark:text-zinc-50">
             Give your server a persionality with a name and an image. You can
             always change it later.
           </DialogDescription>
@@ -88,7 +89,7 @@ const CreateServerModal = () => {
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 ">
             <div className="space-y-8 px-6">
-              <div className="flex items-center justify-center text-center">
+              <div className="flex items-center justify-center text-center ">
                 <FormField
                   control={form.control}
                   name="imageUrl"
@@ -114,14 +115,14 @@ const CreateServerModal = () => {
                     <FormItem>
                       <FormLabel
                         htmlFor="name"
-                        className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70"
+                        className="uppercase text-xs font-bold text-zinc-500 dark:text-[#bfc4c8] "
                       >
                         Server Name
                       </FormLabel>
                       <FormControl>
                         <Input
                           disabled={isLoading}
-                          className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
+                          className="bg-zinc-300/50 dark:bg-[#a8afb4] placeholder:text-white/60 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
                           placeholder="Enter Server Name"
                           {...field}
                         />
@@ -132,7 +133,7 @@ const CreateServerModal = () => {
                 }}
               />
             </div>
-            <DialogFooter className="bg-gray-100 px-6 py-4">
+            <DialogFooter className="bg-gray-100 dark:bg-[#475660] px-6 py-4">
               <Button variant="green" disabled={isLoading}>
                 Create
               </Button>

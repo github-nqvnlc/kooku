@@ -38,6 +38,7 @@ const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
 
   return (
     <UploadDropzone
+      className="text-slate-50 dark:border-slate-50"
       endpoint={endpoint}
       onClientUploadComplete={(res) => onChange(res?.[0].url)}
       onUploadError={(error: Error) => {
