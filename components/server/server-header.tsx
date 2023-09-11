@@ -92,6 +92,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
         {isAdmin && (
           <DropdownMenuItem
+            onClick={() => onOpen("editServer", { server })}
             className="
             focus:bg-[#e4e6e8]
             hover:bg-[#e4e6e8]
