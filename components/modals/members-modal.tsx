@@ -132,7 +132,7 @@ const MembersModal = () => {
                 </div>
                 {roleIconMap[member.role]}
               </div>
-              {server.profileId !== member.profile &&
+              {server.profileId !== member.profile.id &&
                 isLoading !== member.id && (
                   <div>
                     <DropdownMenu>

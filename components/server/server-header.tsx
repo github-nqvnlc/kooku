@@ -128,6 +128,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
         {isModerate && (
           <DropdownMenuItem
+            onClick={() => onOpen("createChannel")}
             className="
             focus:bg-[#e4e6e8]
             hover:bg-[#e4e6e8]
