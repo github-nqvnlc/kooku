@@ -148,6 +148,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         {isModerate && <DropdownMenuSeparator className="bg-[#465158]" />}
         {isAdmin && (
           <DropdownMenuItem
+            onClick={() => onOpen("deleteServer", { server })}
             className="
             focus:bg-[#e4e6e8]
             hover:bg-[#e4e6e8]
@@ -166,6 +167,7 @@ const ServerHeader = ({ server, role }: ServerHeaderProps) => {
         )}
         {!isAdmin && (
           <DropdownMenuItem
+            onClick={() => onOpen("leaveServer", { server })}
             className="
             focus:bg-[#e4e6e8]
             hover:bg-[#e4e6e8]

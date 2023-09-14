@@ -109,13 +109,13 @@ const MembersModal = () => {
           </DialogTitle>
           <DialogDescription>
             <p className="text-sm text-center text-gray-500 dark:text-gray-400">
-              Have {server?.member.length} member in list of all the members of
+              Have {server?.member?.length} member in list of all the members of
               your server.
             </p>
           </DialogDescription>
         </DialogHeader>
         <ScrollArea className="mt-8 max-h-[420px] px-6">
-          {server?.member.map((member) => (
+          {server?.member?.map((member) => (
             <div
               key={member.id}
               className="flex items-center justify-between mb-6"
